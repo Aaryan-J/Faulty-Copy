@@ -1,0 +1,441 @@
+[gd_scene format=3 uid="uid://60onsyoadwbm"]
+
+[ext_resource type="Script" uid="uid://dbhpqvrwoea33" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="AudioStream" uid="uid://wch5ir17tq6d" path="res://Assets/freesound_community-submachine-gun-79846(1).mp3" id="2_e2o6t"]
+[ext_resource type="FontFile" uid="uid://byhxr0xcqcklf" path="res://Assets/PixeloidMono-nAOpP.ttf" id="2_feb5d"]
+[ext_resource type="AudioStream" uid="uid://dla5al1lvr1af" path="res://Assets/universfield-computer-mouse-click-02-383961.mp3" id="4_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://2li3lskkkyne" path="res://Assets/shadowsandechoes-deep-core-loop-version-325061.mp3" id="5_7jktm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbo6d"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.77254903, 0.7490196, 0.654902, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.16862746, 0.09411765, 0.039215688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.05882353, 0.0627451, 0.08627451, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sbo6d"]
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(580, 320, 1)
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 0, 50)
+rotation_3d_max = Vector3(20, 0, 0)
+direction = Vector3(1, -1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feb5d"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="Game" type="Control" unique_id=1949819754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80nbo")
+
+[node name="DeskBackground" type="ColorRect" parent="." unique_id=1767958416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.14117648, 1)
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=2001146867]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_feb5d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=382170340]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.123456776
+anchor_right = 1.0
+anchor_bottom = 0.9876543
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RightPerson" type="PanelContainer" parent="HBoxContainer" unique_id=1423881174]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbo6d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/RightPerson" unique_id=1638505424]
+layout_mode = 2
+
+[node name="RightStats" type="Label" parent="HBoxContainer/RightPerson/VBoxContainer" unique_id=669589871]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2o6t")
+
+[node name="RightPortrait" type="TextureButton" parent="HBoxContainer/RightPerson/VBoxContainer" unique_id=958903773]
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 2
+
+[node name="RightBase" type="TextureRect" parent="HBoxContainer/RightPerson/VBoxContainer/RightPortrait" unique_id=1466557206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RightEyes" type="TextureRect" parent="HBoxContainer/RightPerson/VBoxContainer/RightPortrait" unique_id=1471037565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RightHair" type="TextureRect" parent="HBoxContainer/RightPerson/VBoxContainer/RightPortrait" unique_id=2022160797]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RightRedFlash" type="ColorRect" parent="HBoxContainer/RightPerson" unique_id=1312694235]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.66436553, 0.072774075, 0.0745027, 1)
+
+[node name="LeftPerson" type="PanelContainer" parent="HBoxContainer" unique_id=1028285019]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbo6d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPerson" unique_id=1205347310]
+layout_mode = 2
+
+[node name="LeftStats" type="Label" parent="HBoxContainer/LeftPerson/VBoxContainer" unique_id=862149771]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2o6t")
+
+[node name="LeftPortrait" type="TextureButton" parent="HBoxContainer/LeftPerson/VBoxContainer" unique_id=1266586878]
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 2
+
+[node name="LeftBase" type="TextureRect" parent="HBoxContainer/LeftPerson/VBoxContainer/LeftPortrait" unique_id=1892658183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LeftEyes" type="TextureRect" parent="HBoxContainer/LeftPerson/VBoxContainer/LeftPortrait" unique_id=1526759766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LeftHair" type="TextureRect" parent="HBoxContainer/LeftPerson/VBoxContainer/LeftPortrait" unique_id=133006606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LeftRedFlash" type="ColorRect" parent="HBoxContainer/LeftPerson" unique_id=116477853]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.66436553, 0.072774075, 0.0745027, 1)
+
+[node name="GunAudio" type="AudioStreamPlayer2D" parent="." unique_id=319846807]
+stream = ExtResource("2_e2o6t")
+
+[node name="MainMenuOverlay" type="Control" parent="." unique_id=2130407172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBG" type="ColorRect" parent="MainMenuOverlay" unique_id=1529782685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuParticles" type="GPUParticles2D" parent="MainMenuOverlay" unique_id=726617150]
+position = Vector2(575, 318)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_sbo6d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuOverlay" unique_id=1815226830]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MainMenuOverlay/VBoxContainer" unique_id=973487425]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 80
+text = "FAULTY COPY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="MainMenuOverlay/VBoxContainer" unique_id=322828327]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74509805, 0.74509805, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 25
+text = "Trust them or not, none will trust you."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MainMenuOverlay/VBoxContainer" unique_id=532642959]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MainMenuOverlay/VBoxContainer" unique_id=587717341]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_feb5d")
+text = "START CONTRACT"
+icon_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MainMenuOverlay/VBoxContainer" unique_id=820560977]
+layout_mode = 2
+
+[node name="CreditLabel" type="Label" parent="MainMenuOverlay/VBoxContainer" unique_id=1649131527]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74509805, 0.74509805, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 20
+text = "made by myxs
+(myxsss on itch.io)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProtocolBtn" type="Button" parent="MainMenuOverlay" unique_id=261198348]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -191.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 43.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_feb5d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feb5d")
+text = "READ PROTOCOL"
+
+[node name="ProtocolPanel" type="PanelContainer" parent="MainMenuOverlay" unique_id=176555979]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.5
+offset_right = 20.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbo6d")
+
+[node name="ProtocolText" type="Label" parent="MainMenuOverlay/ProtocolPanel" unique_id=20295168]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.2958664, 0.29586655, 0.2958665, 1)
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 20
+text = "HUMAN PROTOCOL MEDICAL BASELINES:
+• Body Temp: 36.4°C - 37.2°C
+• Blink Rate: 12 - 20 / MIN
+• O2 Pulse: 95% - 99%
+• Pupil Size: 2.0 mm - 4.0 mm
+• Blood Core: DARK CRIMSON
+
+Examine the folder files closely. Eliminate the anomalies.
+
+[Press Space to go through dialogue quicker]
+[Click on the Portraits to make your choice]
+[Click Button again to close]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverOverlay" type="Control" parent="." unique_id=1772111308]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverBG" type="ColorRect" parent="GameOverOverlay" unique_id=1427228918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuParticles" type="GPUParticles2D" parent="GameOverOverlay" unique_id=1219759975]
+position = Vector2(575, 318)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_sbo6d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverOverlay" unique_id=1136346820]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="GameOverLabel" type="Label" parent="GameOverOverlay/VBoxContainer" unique_id=794158369]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 80
+text = "AGENT TERMINATED"
+
+[node name="HomeButton" type="Button" parent="GameOverOverlay/VBoxContainer" unique_id=1480615921]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_feb5d")
+action_mode = 0
+text = "RETURN TO HOME SCREEN"
+
+[node name="CinematicOverlay" type="ColorRect" parent="." unique_id=997859491]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuParticles" type="GPUParticles2D" parent="CinematicOverlay" unique_id=464046609]
+position = Vector2(575, 318)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_sbo6d")
+
+[node name="CenterContainer" type="CenterContainer" parent="CinematicOverlay" unique_id=1833230568]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 62.0
+offset_right = 500.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="CinematicLabel" type="Label" parent="CinematicOverlay/CenterContainer" unique_id=1184796886]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_feb5d")
+theme_override_font_sizes/font_size = 40
+text = "INCOMING TRANSMISSION FROM COMMAND...
+			'Agent, be advised'
+			The entities are adapting to our diagnostic scans
+			Multiple anomalies are fading. Check the logs closer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ClickAudio" type="AudioStreamPlayer2D" parent="." unique_id=1318107881]
+stream = ExtResource("4_fc0e3")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=206447767]
+stream = ExtResource("5_7jktm")
+volume_db = -15.0
