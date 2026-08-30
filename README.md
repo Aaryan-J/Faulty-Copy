@@ -23,8 +23,6 @@ But be warned... the entities are adapting, their anomalies are fading into near
 
     Art and everything else: by me (created in Aseprite and Godot 4)
     Music and SFX: Pixabay
-
-
         BG music: Deep Core Loop Version by ShadowsAndEchoes
         Click: Computer Mouse Click by UniversField
         Gun Shot: Submachine Gun by Freesound Community 
